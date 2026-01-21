@@ -1,29 +1,33 @@
 import { loginView, loginLogic } from '../views/login.js';
-import { store } from '../state/store.js';
+import { render } from '../core/render.js';
+import { projectService } from '../services/projectService.js';
+import { dashboardView } from '../views/dashboard.js';
 
-export function router() {
+
+export async function router() {
     const hash = window.location.hash;
-    const app = document.querySelector("#app");
+    
+    switch (hash) {
+        case '#login':
+            render(loginView());
+            loginLogic();
+            break;
+        
+        case '#dashboard':
+            render(dashboardView());
+            break;
 
-    if (hash === "#projects" && !store.user) {
-        return ""
+        case '#projects':
+            const datos = await projectService.getProjects();
+            render(projectService(datos));
+            projectsLogic();
+            break;
+        
+        default:
+            window.location.hash = '#login';
+            break;
+
     }
 
+
 }
-
-
-// export function router() {
-//     const hash = window.location.hash;
-//     const root = document.querySelector('#root');
-
-//     // Si no hay hash o es #/login, mostramos el login
-//     if (hash === '#/login' || hash === '') {
-//         root.innerHTML = loginView();
-//         loginLogic();
-//     } 
-//     // Si intenta ir a proyectos pero no hemos creado la vista...
-//     else if (hash === '#/projects') {
-//         root.innerHTML = "<h1>Próximamente: Lista de Proyectos</h1>";
-//         // Aquí es donde iría la lógica cuando la creemos
-//     }
-// }

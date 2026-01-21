@@ -1,17 +1,29 @@
-export function navBar() {
-      const route = location.hash;
+import { store } from "../state/store.js"
 
-    if (route == '#/login' || route == '') {
-        return `
+export function navBarView() {
+  if (!store.user) {
+    return `
       <h1>Logueate mi loco</h1>
         `
-    }
-    return `
-    
+  }
+
+  return `
     <nav>
-        <a href="#/dashboard">Home</a>
-        <a href="#/projects">Projects</a>
-        <a href="#/login">Login</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#projects">Projects</a>
+        <button id="btnLogOut">LogOut</button>
     </nav>
     `
+}
+
+export function navBarLogic() {
+  const btnLogOut = document.querySelector("#btnLogOut")
+
+  if (btnLogOut) {
+    btnLogOut.addEventListener('click', () => {
+    localStorage.removeItem('user')
+    window.location.hash = "#login";
+    window.location.reload();
+    })
+  }
 }

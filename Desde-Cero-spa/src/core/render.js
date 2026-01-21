@@ -1,9 +1,16 @@
-import {navBar} from '../components/navBar.js'
-const app = document.getElementById('app')
+import {navBarLogic, navBarView} from '../components/navBar.js'
+
+const app = document.querySelector("#app");
+
 export function render(view){
+
+    app.innerHTML = ""
+
     app.innerHTML = `
-    ${navBar()}
-    <section>${view}
+    ${navBarView()}
+    <section>
+        ${view}
     </section>
-    `
+    `;
+    navBarLogic();
 }
