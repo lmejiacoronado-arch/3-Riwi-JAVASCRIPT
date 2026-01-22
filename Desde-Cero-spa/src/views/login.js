@@ -27,13 +27,14 @@ export function loginLogic() {
             const username = data.get('username')
             const password = data.get('password')
 
-            const user = await projectService.login(username, password)
+            const userFound = await projectService.login(username, password)
 
-            if (user) {
-                store.setLogin(user)
+            if (userFound) {
+                store.setLogin(userFound)
                 window.location.hash = '#projects';
             } else {
                 alert("Incorrect username or password");
+                loginForm.reset();
             }
         });
     }
