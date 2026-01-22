@@ -10,18 +10,17 @@ import { projectDetailsView } from '../views/projectDetail.js';
 export async function router() {
     const hash = window.location.hash;
 
-    if (hash.startsWith("#/projects-details/")) {
+    if (hash.startsWith("#/project-details/")) {
         // 1. Extraemos el número de la URL (ej: de #/project-details/1 saca el 1)
         const id = hash.split("/")[2];
 
         // 2. Pedimos la info completa de ESE proyecto al servidor
-        const proyecto = await projectService.getProjectById(id);
+        const project = await projectService.getProjectById(id);
 
         // 3. Renderizamos la nueva vista de detalle
-        render(projectDetailsView(proyecto));
+        render(projectDetailsView(project));
         return; // Importante para no seguir ejecutando el switch
     }
-
 
 
     switch (hash) {
@@ -37,17 +36,12 @@ export async function router() {
 
         case '#projects':
             const data = await projectService.getProjects();
-
             render(projectsView(data));
             projectsLogic();
-
             break;
 
         default:
             window.location.hash = '#login';
             break;
-
     }
-
-
 }

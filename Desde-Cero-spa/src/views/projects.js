@@ -1,15 +1,14 @@
+import { projectService } from "../services/projectService.js";
 
-export function projectsView(proyecto) {
+export function projectsView(projects) {
 
     return `
     <h2>Tus proyectos</h2>
-    <div class="grid">
-    ${proyecto.map(p => `
-        <div class="card">
-            <a href="#/projects-details/${p.id}">
-                <h3>${p.name}</h3>
-            </a>
-            <input type="checkbox" class="status" data-id="${p.id}" ${p.status === 'completed' ? 'completed' : 'pending'}>
+    <div>
+    ${projects.map(p => `
+        <div>
+            <a href="#/project-details/${p.id}"><h3>${p.name}</h3></a>
+            <input type="checkbox" class="status" data-id="${p.id}" ${p.status === 'completed' ? 'checked' : ''}>
             <p>${p.status}</p>           
         </div>
         `).join('')}
@@ -21,17 +20,13 @@ export function projectsLogic() {
     const checks = document.querySelectorAll(".status");
 
     checks.forEach(check => {
-        check.addEventListener('change', (e) => {
+        check.addEventListener('change', async (e) => {
             const id = e.target.getAttribute('data-id');
-            // Usamos .checked para obtener el estado booleano
-            const isDone = e.target.checked;
+            const nuevoEstado = e.target.checked ? 'completed' : 'pending';
+            // const isDone = e.target.checked;
 
-            if (isDone) {
-                checks.textContent = "completed";
-            } else {
-                console.log(`Proyecto ${id} marcado como pendiente ⏳`);
-                // Aquí podrías llamar a: projectService.updateStatus(id, 'pending')
-            }
+            await projectService.updateProjectStatus(id, nuevoEstado);
+            window.location.reload();
         });
     });
 }
