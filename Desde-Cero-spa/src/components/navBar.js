@@ -2,9 +2,8 @@ import { store } from "../state/store.js"
 
 export function navBarView() {
   if (!store.user) {
-    return `
-      <h1>Logueate mi loco</h1>
-        `
+    window.location.hash = '#login'; 
+    return '';
   }
 
   return `

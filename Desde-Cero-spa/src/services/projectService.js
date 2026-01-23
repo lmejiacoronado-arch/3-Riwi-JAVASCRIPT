@@ -44,10 +44,19 @@ export const projectService = {
     },
 
     async updateProjectStatus(id, newStatus) {
-    await fetch(`${this.URL}/projects/${id}`, {
-        method: 'PATCH', // PATCH solo cambia el campo que le pidas
-        body: JSON.stringify({ status: newStatus }),
-        headers: { 'Content-type': 'application/json; charset=UTF-8' }
-    });
-}
+        await fetch(`${this.URL}/projects/${id}`, {
+            method: 'PATCH', // PATCH solo cambia el campo que le pidas
+            body: JSON.stringify({ status: newStatus }),
+            headers: { 'Content-type': 'application/json; charset=UTF-8' }
+        });
+    },
+
+    async createProject(projectData) {
+        const res = await fetch(`${this.URL}/projects`, {
+            method: 'POST',
+            body: JSON.stringify( projectData ),
+            headers: { 'Content-type': 'application/json; charset=UTF-8' }
+        });
+        return await res.json();
+    },
 };

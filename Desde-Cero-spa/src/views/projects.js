@@ -21,12 +21,19 @@ export function projectsLogic() {
 
     checks.forEach(check => {
         check.addEventListener('change', async (e) => {
+            e.preventDefault();
             const id = e.target.getAttribute('data-id');
             const nuevoEstado = e.target.checked ? 'completed' : 'pending';
-            // const isDone = e.target.checked;
 
             await projectService.updateProjectStatus(id, nuevoEstado);
-            window.location.reload();
+
+            const contenedor = e.target.closest('');
+            const etiquetaEstado = contenedor.querySelector('.status-label');
+
+            // 3. Actualizamos solo el texto
+            etiquetaEstado.textContent = nuevoEstado;
+
+            
         });
     });
 }

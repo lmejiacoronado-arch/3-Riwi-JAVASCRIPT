@@ -8,10 +8,10 @@ export function projectDetailsView(p) {
             
             <h3>${p.name}</h3>            
             <div class="info">
-                <p><strong>Detalles:</strong> ${p.details}</p> 
-                <p><strong>Estado:</strong> ${p.status}</p>
+                <p><strong>Details:</strong> ${p.details}</p> 
+                <p><strong>Status:</strong> ${p.status}</p>
             </div>
         </div>
     `;
-}
+};
 

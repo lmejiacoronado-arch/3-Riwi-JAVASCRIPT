@@ -16,13 +16,13 @@
     {
       "id": "2",
       "name": "Inventory Application",
-      "status": "pending",
+      "status": "completed",
       "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias minus recusandae voluptates placeat reprehenderit? Incidunt nulla architecto, illum at accusantium odio, voluptatum error cupiditate quae corrupti optio, aliquid tempora."
     },
     {
       "id": "3",
       "name": "Booking System",
-      "status": "pending",
+      "status": "completed",
       "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias minus recusandae voluptates placeat reprehenderit? Incidunt nulla architecto, illum at accusantium odio, voluptatum error cupiditate quae corrupti optio, aliquid tempora."
     },
     {
