@@ -10,19 +10,19 @@
     {
       "id": "1",
       "name": "Corporate Website",
-      "status": "pending",
+      "status": "completed",
       "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias minus recusandae voluptates placeat reprehenderit? Incidunt nulla architecto, illum at accusantium odio, voluptatum error cupiditate quae corrupti optio, aliquid tempora."
     },
     {
       "id": "2",
       "name": "Inventory Application",
-      "status": "completed",
+      "status": "pending",
       "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias minus recusandae voluptates placeat reprehenderit? Incidunt nulla architecto, illum at accusantium odio, voluptatum error cupiditate quae corrupti optio, aliquid tempora."
     },
     {
       "id": "3",
       "name": "Booking System",
-      "status": "completed",
+      "status": "pending",
       "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias minus recusandae voluptates placeat reprehenderit? Incidunt nulla architecto, illum at accusantium odio, voluptatum error cupiditate quae corrupti optio, aliquid tempora."
     },
     {
@@ -36,6 +36,12 @@
       "name": "Clothing E-commerce",
       "status": "pending",
       "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias minus recusandae voluptates placeat reprehenderit? Incidunt nulla architecto, illum at accusantium odio, voluptatum error cupiditate quae corrupti optio, aliquid tempora."
+    },
+    {
+      "id": "9079",
+      "name": "prueba",
+      "details": "hoooooooola",
+      "status": "pending"
     }
   ]
 }

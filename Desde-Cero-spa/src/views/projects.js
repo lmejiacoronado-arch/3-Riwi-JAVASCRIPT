@@ -3,20 +3,31 @@ import { projectService } from "../services/projectService.js";
 export function projectsView(projects) {
 
     return `
-    <h2>Tus proyectos</h2>
     <div>
-    ${projects.map(p => `
+        <header>
+            <h1>Mis Proyectos</h1>
+            <a href="#create" class="btn-add-main"> 
+                + Nuevo Proyecto 
+            </a>
+        </header>
+
         <div>
-            <a href="#/project-details/${p.id}"><h3>${p.name}</h3></a>
-            <input type="checkbox" class="status" data-id="${p.id}" ${p.status === 'completed' ? 'checked' : ''}>
-            <p>${p.status}</p>           
+            ${projects.map(p => `
+                <div>
+                    <h3>${p.name}</h3>
+                    <p>Status: <span class="status-label">${p.status}</span></p>
+                    <div>
+                        <a href="#/project-details/${p.id}">Details</a>
+                        <input type="checkbox" class="status" data-id="${p.id}" ${p.status === 'completed' ? 'checked' : ''}>
+                    </div>
+                </div>
+            `).join('')}
         </div>
-        `).join('')}
     </div>
     `;
 }
 export function projectsLogic() {
-    // Seleccionamos todos los checks que acabamos de renderizar
+
     const checks = document.querySelectorAll(".status");
 
     checks.forEach(check => {
@@ -33,7 +44,7 @@ export function projectsLogic() {
             // 3. Actualizamos solo el texto
             etiquetaEstado.textContent = nuevoEstado;
 
-            
+
         });
     });
 }

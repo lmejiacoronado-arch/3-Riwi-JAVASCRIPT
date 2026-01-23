@@ -5,7 +5,7 @@ export function createNewProjectView() {
     <div>
         <h2>Creando proyecto</h2>
         <form id="createNewProject">
-            <input type="text" id="name" placeholdeqr="Name project" required>
+            <input type="text" id="name" placeholder="Name project" required>
             <textarea id="details" placeholder="Details project" required></textarea>
             <button type="submit">Add</button>
         </form>
@@ -13,8 +13,8 @@ export function createNewProjectView() {
     `;
 };
 
-export function createNewProjectLogis() {
-    const createNewProject = document.querySelector("#createNewProjects")
+export function createNewProjectLogic() {
+    const createNewProject = document.querySelector("#createNewProject")
 
     createNewProject.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -26,7 +26,7 @@ export function createNewProjectLogis() {
         };
 
         await projectService.createProject(newProject)
-        window.location.hash = '#projects';
+        window.location.hash = '#create';
     });
 };
 
