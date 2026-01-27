@@ -1,6 +1,7 @@
 import { projectService } from "../services/service.js";
+import { store } from "../state/store.js"
 
-export function LoginView() {
+export function loginView() {
     return `
     <main class="auth-container">
         <section class="auth-card">
@@ -28,7 +29,7 @@ export function LoginView() {
     `
 }
 
-export function LoginLogic() {
+export function loginLogic() {
     const formLogin = document.querySelector(".formLogin")
 
     formLogin.addEventListener('submit' , async (e) => {
@@ -43,10 +44,10 @@ export function LoginLogic() {
         
         if (userFound) {
             store.setLogin(userFound)
-            window.location.hash = '#home';
+            window.location.hash = '#/home';
         } else {
             alert("Incorrect username or password");
-            loginForm.reset();
+            formLogin.reset();
         }
     });
 }

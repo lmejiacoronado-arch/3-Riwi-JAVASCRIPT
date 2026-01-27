@@ -1,8 +1,8 @@
-import { store } from "../state/store.js"
+import { store } from "../state/store.js";
 
 export function homeView() {
     return `
     <h1>Dashboard</h1>
-    <p>Bienvenido al panel de control, <strong>${store.user ? store.user.email : 'Invitado'}</strong></p> 
-    `
+    <p>Bienvenido al panel de control, <strong>${store.user.email}</strong></p> 
+    `;
 }
