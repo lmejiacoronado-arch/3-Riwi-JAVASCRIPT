@@ -1,0 +1,139 @@
+/* 1. CONFIGURACIÓN GLOBAL */
+:root {
+  --primary: #2eb85c;
+  --primary-hover: #26a350;
+  --dark: #0f172a;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-app: #f8fafc;
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --radius-lg: 20px;
+  --radius-md: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-app);
+}
+
+/* 2. CENTRADO MAESTRO (Para Login y Registro) */
+/* Este contenedor asegura que el formulario esté en el centro muerto de la pantalla */
+#main:has(.auth-container), 
+#main:has(#loginForm) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 3. ESTILO DE LA TARJETA DE AUTENTICACIÓN */
+.auth-container, #loginForm {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin: 20px; /* Margen de seguridad para móviles */
+}
+
+/* Títulos */
+.auth-container h2, #loginForm h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* 4. FORMULARIOS E INPUTS */
+.auth-form, #loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espaciado uniforme entre campos */
+}
+
+/* Labels */
+#loginForm label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: -5px; /* Acerca el label al input */
+  text-align: left;
+}
+
+/* Inputs y Selects unificados */
+input, select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: #fdfdfd;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(46, 184, 92, 0.1);
+}
+
+/* 5. BOTONES (Estilo RestorApp) */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 184, 92, 0.3);
+}
+
+/* 6. LINKS Y TEXTO INFERIOR */
+p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 7. GRID DEL MENÚ (No se verá afectado por el centrado del login) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

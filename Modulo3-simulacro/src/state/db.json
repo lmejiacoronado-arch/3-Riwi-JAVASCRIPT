@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "luis",
+      "email": "luis",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "luis",
+      "email": "luis@gmail.com",
+      "phone": "12345",
+      "password": "123",
+      "role": "client"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": "",
+      "items": [],
+      "status": "",
+      "createdAt": ""
+    }
+  ],
+  "menu": [
+    {
+      "id": "1",
+      "name": "Hamburger",
+      "price": 8.99,
+      "category": "food"
+    },
+    {
+      "id": "2",
+      "name": "Pizza",
+      "price": 10.5,
+      "category": "food"
+    },
+    {
+      "id": "3",
+      "name": "Hot Dog",
+      "price": 6.25,
+      "category": "food"
+    },
+    {
+      "id": "4",
+      "name": "Coke",
+      "price": 2.5,
+      "category": "drink"
+    },
+    {
+      "id": "5",
+      "name": "Water",
+      "price": 1.5,
+      "category": "drink"
+    }
+  ]
+}
