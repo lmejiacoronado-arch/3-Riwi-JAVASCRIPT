@@ -10,6 +10,12 @@ export function registerView() {
             <input type="email" name="email" id="reg-email" placeholder="Correo electrónico" required>
             <input type="tel" name="phone" id="reg-phone" placeholder="Teléfono" required>
             <input type="password" name="password" id="reg-pass" placeholder="Contraseña" required>
+            <label>Select Role</label>
+            <select name="role" required>
+                <option value="" disabled selected>Select a role</option>
+                <option name="admin">Administrator</option>
+                <option name="client">Client</option>
+            </select>
             
             <button type="submit">Registrarse</button>
             <p>¿Ya tienes cuenta? <a href="#/login" id="go-login">Inicia sesión</a></p>
@@ -30,7 +36,8 @@ export function registerLogic() {
             name: data.get("name"),
             email: data.get("email"),
             phone: data.get("phone"),
-            password: data.get("password")
+            password: data.get("password"),
+            role: data.get("role")
         };
 
         // ¡AQUÍ es donde conectas con el service!

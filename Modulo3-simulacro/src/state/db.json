@@ -3,17 +3,17 @@
     {
       "id": "1",
       "name": "luis",
-      "email": "luis",
+      "email": "luis@gmail.com",
       "password": "123",
       "role": "admin"
     },
     {
-      "id": "2",
+      "id": "981a",
       "name": "luis",
-      "email": "luis@gmail.com",
+      "email": "l@gmail.com",
       "phone": "12345",
       "password": "123",
-      "role": "client"
+      "role": "Client"
     }
   ],
   "orders": [

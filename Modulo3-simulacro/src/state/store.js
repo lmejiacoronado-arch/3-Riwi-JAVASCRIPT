@@ -1,7 +1,7 @@
 export const store = {
     user: (() => {
     try {
-      return JSON.parse(localStorage.getItem("user"));
+      return JSON.parse(localStorage.getItem('user'));
     } catch {
       return null;
     }

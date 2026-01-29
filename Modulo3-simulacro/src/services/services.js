@@ -1,14 +1,12 @@
-import { registerLogic } from "../views/register.js";
-
 export const projectService = {
     URL: "http://localhost:3000",
 
-    async login(email, password, role) { //esto va tomar tiempo
+    async login(email, password) { //esto va tomar tiempo
         try {
-            const answer = await fetch(`${this.URL}/users`); //espere porque esto toma tiempo
-            const user = await answer.json();
-            const userFound = user.find(u =>
-                u.email === email && u.password === password && u.role === role);
+            const answerLogin = await fetch(`${this.URL}/users`); //espere porque esto toma tiempo
+            const dataLogin = await answerLogin.json();
+            const userFound = dataLogin.find(u =>
+                u.email === email && u.password === password);
 
             return userFound;
         } catch (error) {
@@ -20,16 +18,16 @@ export const projectService = {
 
     async register(newUser) {
         try {
-            const answer = await fetch(`${this.URL}/users`, {
+            const answerRegister = await fetch(`${this.URL}/users`, {
                 method: 'POST',
                 body: JSON.stringify(newUser),
                 headers: { 'Content-type': 'application/json; charset=UTF-8' }
             });
-            if (!answer.ok) throw new Error("Error creating project");
-            return await answer.json();
+            if (!answerRegister.ok) throw new Error("Error register");
+            return await answerRegister.json();
 
         } catch (error) {
-            console.error("Error al actualizar estado:", error);
+            console.error("Error al actualizar register:", error);
             return null;
         }
     },
@@ -37,9 +35,10 @@ export const projectService = {
 
     async getMenu() {
         try {
-            const response = await fetch(`${this.URL}/menu`);
-            const res = await response.json()
-            return res
+            const answerGetMenu = await fetch(`${this.URL}/menu`);
+            if (!answerGetMenu.ok) throw new Error("Error menu");
+            const dataGetMenu = await answerGetMenu.json();
+            return dataGetMenu;
         } catch (error) {
             console.error("Error en la petición:", error);
             return null

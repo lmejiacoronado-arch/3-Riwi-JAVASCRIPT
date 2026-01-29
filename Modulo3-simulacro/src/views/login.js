@@ -1,4 +1,5 @@
 import { projectService } from "../services/services.js";
+import { store } from "../state/store.js";
 
 export function loginView() {
     return `
@@ -12,12 +13,7 @@ export function loginView() {
             <label for="login-pass">Contraseña</label>
             <input id="login-pass" type="password" name="password" placeholder="Your password" required>
 
-            <label>Select Role</label>
-            <select name="role" required>
-                <option value="" disabled selected>Select a role</option>
-                <option value="admin">Administrator</option>
-                <option value="client">Client</option>
-            </select>
+            
 
             <button type="submit">Entrar</button>
 
@@ -37,13 +33,12 @@ export function loginLogic() {
             const data = new FormData(loginForm);
             const username = data.get('email')
             const password = data.get('password')
-            const role = data.get('role')
 
-            const userFound = await projectService.login(username, password, role)
+            const userFound = await projectService.login(username, password)
 
             if (userFound) {
                 store.setLogin(userFound)
-                window.location.hash = '#/home';
+                window.location.hash = '#/menu';
             } else {
                 alert("Incorrect username or password");
                 loginForm.reset();
