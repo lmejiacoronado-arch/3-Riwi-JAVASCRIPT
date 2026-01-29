@@ -10,11 +10,7 @@ export function render(view) {
     const hash = window.location.hash || '#/login';
     main.innerHTML = "";
 
-    
     const user = JSON.parse(localStorage.getItem('user'))
-    console.log(user);
-    
-    
 
     if (hash === '#/login' || hash == '#/register') {
         main.innerHTML = `<section>${view}</section>`;

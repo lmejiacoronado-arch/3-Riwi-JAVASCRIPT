@@ -1,5 +1,5 @@
 export const projectService = {
-    URL: "http://localhost:3000",
+    URL: "http://localhost:3001",
 
     async login(email, password) { //esto va tomar tiempo
         try {
@@ -44,4 +44,19 @@ export const projectService = {
             return null
         }
     },
+
+    async getMenuId(id) {
+        try {
+            const answerGetMenuId = await fetch(`${this.URL}/menu/${id}`);
+            if (!answerGetMenuId.ok) throw new Error("Error menu");
+            const dataGetMenuId = await answerGetMenuId.json();
+            console.log(dataGetMenuId);
+            return dataGetMenuId
+            
+            
+
+        } catch (err){
+
+        }
+    }
 }

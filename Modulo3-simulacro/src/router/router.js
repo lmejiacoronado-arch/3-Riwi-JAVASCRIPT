@@ -2,8 +2,9 @@ import { store } from "../state/store.js";
 import { render } from "../core/render.js";
 import { loginView, loginLogic } from "../views/login.js"
 import { registerView, registerLogic, } from "../views/register.js";
-import { menuView } from "../views/client.js/menu.js";
+import { menuLogic, menuView } from "../views/client.js/menu.js";
 import { projectService } from "../services/services.js";
+import { placeOrdersLogic, placeOrdersView } from "../views/placeOrders.js";
 
 export async function router() {
     let hash = window.location.hash;
@@ -37,12 +38,14 @@ export async function router() {
             const products = await projectService.getMenu()
             if (user.role == "Client") {
                 render(menuView(products));
+                menuLogic();
                 break;
             }
 
         case '#/placeOrders':
             if (user.role == "Client") {
-                render('<p>test</p>');
+                render(placeOrdersView());
+                placeOrdersLogic();
                 break;
             }
 
