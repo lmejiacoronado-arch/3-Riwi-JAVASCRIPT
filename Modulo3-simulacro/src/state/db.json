@@ -14,6 +14,14 @@
       "phone": "12345",
       "password": "123",
       "role": "Client"
+    },
+    {
+      "id": "f04c",
+      "name": "Luis",
+      "email": "jhonatanhiguita7002@gmail.com",
+      "phone": "1",
+      "password": "123",
+      "role": "Client"
     }
   ],
   "orders": [
@@ -31,35 +39,35 @@
       "name": "Hamburger",
       "price": 8.99,
       "category": "food",
-      "img":"./src/state/imgs/hamburguesa.avif"
+      "img": "./src/state/imgs/hamburguesa.avif"
     },
     {
       "id": "2",
       "name": "Pizza",
       "price": 10.5,
       "category": "food",
-      "img":"./src/state/imgs/pizza.jpeg"
+      "img": "./src/state/imgs/pizza.jpeg"
     },
     {
       "id": "3",
       "name": "Hot Dog",
       "price": 6.25,
       "category": "food",
-      "img":"./src/state/imgs/hotdog.jpg"
+      "img": "./src/state/imgs/hotdog.jpg"
     },
     {
       "id": "4",
       "name": "Coke",
       "price": 2.5,
       "category": "drink",
-      "img":"./src/state/imgs/coke.jpg"
+      "img": "./src/state/imgs/coke.jpg"
     },
     {
       "id": "5",
       "name": "Water",
       "price": 1.5,
       "category": "drink",
-      "img":"./src/state/imgs/awita.jpg"
+      "img": "./src/state/imgs/awita.jpg"
     }
   ]
 }

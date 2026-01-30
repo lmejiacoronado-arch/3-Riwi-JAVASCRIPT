@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea: Manipulación del DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container-wrapper">
+        <main class="card">
+            
+            <header>
+                <h2>Mis Notas</h2>
+                <p class="instruccion">Escribe una nota y presiona el botón para guardarla en la lista.</p>
+            </header>
+
+            <div class="counter-container">
+                <span>Notas activas:</span>
+                <span id="noteCounter">0</span>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="noteInput" placeholder="Escribe algo importante..." maxlength="100">
+                <button id="btnAdd">Agregar Nota</button>
+            </div>
+
+            <ul id="listaNotas">
+                <div id="emptyState">
+                    <p>Tu lista está vacía actualmente.</p>
+                </div>
+            </ul>
+
+            <footer class="footer-actions">
+                <button id="btnClearAll" class="btn-clear">Limpiar todo el tablero</button>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

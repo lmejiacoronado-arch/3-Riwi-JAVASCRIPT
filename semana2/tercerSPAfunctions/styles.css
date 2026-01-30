@@ -1,0 +1,22 @@
+body {
+    background-color: aqua;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: cadetblue;
+    height: 50px;
+    margin-top: 30px;
+    
+}
+nav a{
+    background-color: blanchedalmond;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}

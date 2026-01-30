@@ -57,12 +57,11 @@ export function placeOrdersView() {
     `;
 }
 
-export function placeOrdersLogic() {
+export async function placeOrdersLogic() {
     const card = document.querySelector(".cart-card")
     const pedidoActual = JSON.parse(localStorage.getItem("carr")) || []
-    console.log(pedidoActual);
 
-    card.addEventListener('click', (e) => {
+    card.addEventListener('click', async (e) => {
         // Aumentar
         if (e.target.textContent == '+') {
             const contador = parseInt(e.target.previousElementSibling.textContent)
@@ -75,12 +74,17 @@ export function placeOrdersLogic() {
         }
         //Eliminar
         if (e.target.textContent.toLowerCase() == 'remove') {
-            e.target.closest('.cart-item').remove();
+            const encontrar = pedidoActual.findIndex((select)=> select.id == e.target.dataset.id);
+            pedidoActual.splice(encontrar,1)
             
+            
+            
+            localStorage.setItem("carr", JSON.stringify(pedidoActual))
+            
+        
+            e.target.closest('.cart-item').remove()
+            console.log(pedidoActual)
         }
-        console.log(e.target.dataset.id);
-        console.log(pedidoActual);
-
 
     })
 }
