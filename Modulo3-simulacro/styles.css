@@ -194,13 +194,24 @@ button.cart-clear-all:hover { box-shadow: none; transform: none; color: var(--pr
 }
 
 .cart-item-img {
-    width: 65px;
+    width: 100px;
     height: 65px;
     border-radius: var(--radius-md);
     object-fit: cover;
     overflow: scroll;
 }
-
+article.card {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  align-self: center;
+  gap: 1rem;
+}
+div.card-image > img{
+  width: 40vw;
+  height: 40vh;
+  justify-self: center;
+}
 .cart-item-info { flex: 1; }
 
 .cart-item-top {

@@ -1,5 +1,5 @@
 export const projectService = {
-    URL: "http://localhost:3001",
+    URL: "http://localhost:3000",
 
     async login(email, password) { //esto va tomar tiempo
         try {

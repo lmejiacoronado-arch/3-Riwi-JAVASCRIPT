@@ -2,9 +2,9 @@ import { store } from "../state/store.js";
 import { render } from "../core/render.js";
 import { loginView, loginLogic } from "../views/login.js"
 import { registerView, registerLogic, } from "../views/register.js";
-import { menuLogic, menuView } from "../views/client.js/menu.js";
+import { menuLogic, menuView } from "../views/client/menu.js";
 import { projectService } from "../services/services.js";
-import { placeOrdersLogic, placeOrdersView } from "../views/placeOrders.js";
+import { placeOrdersLogic, placeOrdersView } from "../views/client/placeOrders.js";
 
 export async function router() {
     let hash = window.location.hash;

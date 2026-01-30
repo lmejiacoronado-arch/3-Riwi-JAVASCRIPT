@@ -1,12 +1,11 @@
 import { projectService } from "../../services/services.js";
 
-// Esta función genera el HTML de la cuadrícula
 export function menuView(products) {
     const cards = products.map(item => `
         <article class="card">
             <div class="card-image">
                 <span class="badge">${item.category.toUpperCase()}</span>
-                <img src="https://via.placeholder.com/300" alt="${item.name}">
+                <img src="${item.img}" alt="${item.name}">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -34,13 +33,13 @@ export function menuLogic() {
     const pedido = []
     btnAdd.addEventListener('click', async (e) => {
         if(e.target.tagName == 'BUTTON') {
+            
         const objeto = await projectService.getMenuId(e.target.dataset.id);
         const encontrar = pedido.some((select)=> select.id == objeto.id);
 
         if (!encontrar) {
             pedido.push(objeto)
-        }
-        
+        } 
     }
     localStorage.setItem("carr", JSON.stringify(pedido))
     })   
