@@ -1,0 +1,373 @@
+/* =======================================================
+   ESTILOS GLOBALES - PROYECTO GESTIÓN DE TAREAS (SPA)
+   ======================================================= */
+
+:root {
+    /* Paleta de colores */
+    --primary: #4f46e5;         /* Indigo moderno */
+    --primary-hover: #4338ca;
+    --bg-main: #f1f5f9;         /* Gris muy claro azulado */
+    --text-dark: #1e293b;       /* Azul pizarra oscuro */
+    --text-muted: #64748b;
+    --white: #ffffff;
+    
+    /* Estados y Acciones */
+    --danger: #ef4444;          /* Rojo para borrar/logout */
+    --success: #10b981;         /* Verde para completar/éxito */
+    --warning: #f59e0b;         /* Ámbar para prioridades */
+    --border: #e2e8f0;
+    
+    /* Sombras y Bordes */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+}
+
+/* Reset Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Contenedor Principal de la SPA */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* --- NAVEGACIÓN (NavBar) --- */
+nav {
+    background: var(--white);
+    padding: 0.75rem 5%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Botón LogOut específico */
+#btnLogOut {
+    background: #fee2e2;
+    color: var(--danger);
+    border: 1px solid #fecaca;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: auto; /* Lo empuja a la derecha */
+    transition: all 0.2s;
+}
+
+#btnLogOut:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* --- AUTENTICACIÓN (Login & Register) --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.auth-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.auth-card p {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus {
+    outline: 2px solid #c7d2fe;
+    border-color: var(--primary);
+}
+
+.btn-auth {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-auth:hover {
+    background: var(--primary-hover);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- GESTIÓN DE TAREAS (Manager Card & Form) --- */
+.manager-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2.5rem;
+}
+
+#manager-task-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+#manager-task-form textarea {
+    grid-column: 1 / -1;
+    min-height: 80px;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+}
+
+#btn-save { background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
+#btn-reset { background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; }
+
+/* --- TABLAS (Employees & Manager) --- */
+.manager-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.manager-table th {
+    background: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border);
+}
+
+.manager-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+.manager-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estados Dinámicos de Tareas */
+[class^="status-"] {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-completada { background: #dcfce7; color: #15803d; }
+.status-pendiente { background: #fef9c3; color: #a16207; }
+.status-urgente { background: #fee2e2; color: #b91c1c; }
+
+/* Botones de Acción en Tablas */
+.btn-edit, .btn-delete {
+    padding: 0.4rem;
+    font-size: 1.1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-done {
+    background: var(--success);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.btn-edit:hover, .btn-delete:hover { transform: scale(1.2); }
+
+/* --- PERFIL DE USUARIO --- */
+.profile-card {
+    background: var(--white);
+    max-width: 650px;
+    margin: 3rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.profile-header {
+    background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.profile-header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.profile-details {
+    padding: 2.5rem;
+}
+
+.detail-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-group label {
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.detail-group p {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.role-tag {
+    background: #e0e7ff;
+    color: var(--primary);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Fila de tarea completada: fondo grisáceo y texto tachado */
+.row-completed {
+    background-color: #f8fafc !important;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+}
+
+.row-completed .task-title {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+/* Estilo para que el estado 'Completada' se vea bien */
+.status-completada {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* Animación simple al pasar el mouse por las filas */
+.manager-table tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Colores para los nuevos estados */
+.status-pending { background: #fef9c3; color: #854d0e; }    /* Amarillo */
+.status-in-progress { background: #dbeafe; color: #1e40af; } /* Azul */
+.status-completed { background: #dcfce7; color: #166534; }   /* Verde */
+
+/* Colores para prioridades */
+.priority-alto { color: #b91c1c; font-weight: bold; }
+.priority-bajo { color: #15803d; }

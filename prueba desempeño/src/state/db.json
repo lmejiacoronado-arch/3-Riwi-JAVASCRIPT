@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "089d",
+      "name": "lili",
+      "email": "li@gmail.com",
+      "password": "121234563",
+      "role": "Employees",
+      "phone": "+57 300 123 1234"
+    },
+    {
+      "id": "088d",
+      "name": "lala",
+      "email": "la@gmail.com",
+      "password": "123456",
+      "role": "Employees",
+      "phone": "+57 300 123 5678"
+    },
+    {
+      "id": "087d",
+      "name": "lele",
+      "email": "le@gmail.com",
+      "password": "123456",
+      "role": "Employees",
+      "phone": "+57 300 123 9012"
+    },
+    {
+      "id": "7a12",
+      "name": "Luis",
+      "email": "luis@gmail.com",
+      "password": "123456",
+      "role": "Manager",
+      "phone": "+57 300 123 4567"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Tare1",
+      "userId": "089d",
+      "category": "Arxhivosssss",
+      "priority": "media",
+      "status": "pendind",
+      "date": "2026-02-04",
+      "description": "Si o no marino, si señor",
+      "id": "4317"
+    },
+    {
+      "id": "b698",
+      "title": "Tare2",
+      "userId": "088d",
+      "category": "erewrewf",
+      "priority": "media",
+      "status": "Completada",
+      "date": "2026-02-03",
+      "description": "hgerhehte"
+    }
+  ]
+}
