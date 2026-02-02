@@ -14,23 +14,34 @@
       "phone": "12345",
       "password": "123",
       "role": "Client"
-    },
-    {
-      "id": "f04c",
-      "name": "Luis",
-      "email": "jhonatanhiguita7002@gmail.com",
-      "phone": "1",
-      "password": "123",
-      "role": "Client"
     }
   ],
   "orders": [
     {
-      "id": "1",
-      "userId": "",
-      "items": [],
-      "status": "",
-      "createdAt": ""
+      "id": "a346",
+      "userId": "981a",
+      "userName": "luis",
+      "items": [
+        {
+          "id": "1",
+          "name": "Hamburger",
+          "price": 8.99,
+          "category": "food",
+          "img": "./src/state/imgs/hamburguesa.avif",
+          "quantity": 2
+        },
+        {
+          "id": "2",
+          "name": "Pizza",
+          "price": 10.5,
+          "category": "food",
+          "img": "./src/state/imgs/pizza.jpeg",
+          "quantity": 2
+        }
+      ],
+      "total": 38.980000000000004,
+      "status": "pending",
+      "createdAt": "1/2/2026, 16:41:43"
     }
   ],
   "menu": [

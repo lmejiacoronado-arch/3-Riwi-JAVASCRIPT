@@ -30,7 +30,7 @@ export function menuView(products) {
 
 export function menuLogic() {
     const btnAdd = document.querySelector(".menu-container")
-    const pedido = []
+    const pedido = JSON.parse(localStorage.getItem("carr")) || [];
     btnAdd.addEventListener('click', async (e) => {
         if(e.target.tagName == 'BUTTON') {
             
@@ -39,8 +39,10 @@ export function menuLogic() {
 
         if (!encontrar) {
             pedido.push(objeto)
+
+            localStorage.setItem("carr", JSON.stringify(pedido))
         } 
     }
-    localStorage.setItem("carr", JSON.stringify(pedido))
+    
     })   
 }

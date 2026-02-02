@@ -1,13 +1,19 @@
-[
+{
+  "users": [
     {
-        "id":"1",
-        "producto": "manzana",
-        "precio": "1500"
-    },
-
-    {
-        "id":"2",
-        "producto": "pera",
-        "precio": "1000"
+      "id": "1",
+      "name": "antonio",
+      "rol": "admin",
+      "email": "admin@gmail.com",
+      "password": "123"
     }
-]
+  ],
+  "productos": [
+    {
+      "id": "4b1b",
+      "nombre": "galletas",
+      "precio": "2333",
+      "cantidad": "23"
+    }
+  ]
+}

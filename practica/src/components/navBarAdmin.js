@@ -4,9 +4,8 @@ export function navBarViewAdmin() {
   return `
     <nav>
         <ul>
-            <li><a href="#/dashboard">Dashboard</a></li>
-            <li><a href="#/inventory">Inventory</a></li>
-            <li><a href="#/profile">Profile</a></li>
+            <li><a href="#/eventsReserved">Events Reserved</a></li>
+            <li><a href="#/allEvents">All Events</a></li>
             <button id="btnLogOut">LogOut</button>
         </ul>
     </nav>

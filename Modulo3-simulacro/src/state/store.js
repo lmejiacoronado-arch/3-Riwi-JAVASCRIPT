@@ -10,5 +10,9 @@ export const store = {
     setLogin(userData) {
         this.user = userData
         localStorage.setItem('user', JSON.stringify(userData));
+    },
+
+    getUserId() {
+        return this.user ? this.user.id : null;
     }
 }

@@ -298,3 +298,63 @@ button.cart-confirm-btn {
     color: #000;
     margin-top: 20px;
 }
+
+
+
+
+/* Ocultar detalles por defecto */
+.order-details-row {
+    display: none;
+    background-color: #f8f9fa;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Mostrar cuando tiene la clase active */
+.order-details-row.active {
+    display: table-row;
+}
+
+.order-row-main {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.order-row-main:hover {
+    background-color: #f1f1f1;
+}
+
+.details-content {
+    padding: 20px;
+    border-left: 5px solid #2ecc71;
+    margin: 10px;
+}
+
+.items-list {
+    list-style: none;
+    padding: 0;
+}
+
+.items-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ccc;
+    max-width: 400px;
+}
+
+/* Badges de estado */
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.status-pending { background: #fff3cd; color: #856404; }
+.status-completed { background: #d4edda; color: #155724; }
+.status-cancelled { background: #f8d7da; color: #721c24; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
